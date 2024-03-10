@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "test": "run-s test:*",
+    "test:node": "node main.mjs",
+    "test:bun": "bun main.mjs",
+    "test:deno": "deno run deno.ts",
+    "build": "run-p build:*",
+    "build:esm": "esbuild esm.ts --bundle --platform=neutral --outfile=esm.mjs",
+    "build:cjs": "esbuild esm.ts --bundle --platform=node --outfile=esm.cjs"
+  },
+  "dependencies": {
+    "@remark-embedder/core": "^3.0.2",
+    "esbuild": "^0.20.1",
+    "npm-run-all2": "^6.1.2"
+  }
+}
